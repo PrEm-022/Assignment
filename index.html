@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Stack-Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">Bio<span>Stack</span></div>
+    <button class="theme-btn" id="themeToggle">
+      <span class="theme-icon" id="themeIcon">☀️</span>
+      <span id="themeLabel">Light</span>
+    </button>
+  </header>
+
+  <!-- Stats -->
+  <div class="stat-strip">
+    <div class="stat-card">
+      <div class="stat-value" id="statLinks">0</div>
+      <div class="stat-label">Total Links</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="statFollowers">0</div>
+      <div class="stat-label">Followers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="statStatus">—</div>
+      <div class="stat-label">Creator Tier</div>
+    </div>
+  </div>
+
+  <!-- Profile Panel -->
+  <div class="panel profile-area">
+    <div class="panel-title">Creator Profile</div>
+    <div class="avatar-row">
+      <div class="avatar" id="avatarEl">C</div>
+      <div>
+        <div class="creator-name" id="creatorName">Your Name</div>
+        <div class="creator-handle" id="creatorHandle">@handle</div>
+        <div id="verifiedBadge" style="display:none" class="badge">⚡ Verified Creator</div>
+      </div>
+    </div>
+
+    <!-- Name / Handle inputs -->
+    <div class="form-group">
+      <label class="form-label" for="inputName">Display Name</label>
+      <input class="form-input" id="inputName" type="text" placeholder="e.g. Alex Rivera" maxlength="32" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="inputHandle">Handle</label>
+      <input class="form-input" id="inputHandle" type="text" placeholder="e.g. @alexrivera" maxlength="28" />
+    </div>
+
+    <!-- Follower count -->
+    <div class="follower-row">
+      <span class="follower-label">Followers:</span>
+      <input class="follower-input" id="followerCount" type="number" value="0" min="0" max="9999999" />
+    </div>
+  </div>
+
+  <!-- Add Link Panel -->
+  <div class="panel">
+    <div class="panel-title">Add Social Link</div>
+
+    <div class="form-group">
+      <label class="form-label" for="inputTitle">Link Title</label>
+      <input class="form-input" id="inputTitle" type="text" placeholder="e.g. My YouTube Channel" maxlength="40" />
+      <div class="error-msg" id="errTitle">Title cannot be empty.</div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="inputUrl">URL</label>
+      <input class="form-input" id="inputUrl" type="text" placeholder="https://youtube.com/..." />
+      <div class="error-msg" id="errUrl">Must be a valid URL starting with https://</div>
+    </div>
+
+    <button class="btn-add" id="btnAdd">+ Add Link</button>
+  </div>
+
+  <!-- Preview Panel -->
+  <div class="panel preview-panel" style="grid-column: 1 / -1;">
+    <div class="panel-title">Profile Preview — Links</div>
+    <div class="links-list" id="linksList"></div>
+  </div>
+
+</div>
+</body>
+<script src="script.js"></script>
+</html>
